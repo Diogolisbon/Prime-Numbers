@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Loops: Task 3</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+  </body>
+  <script>
+    let i = 500;
+    const para = document.createElement('p');
+
+    function isPrime(num) {
+      for(let i = 2; i < num; i++) {
+        if(num % i === 0) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+
+    // Add your code here
+while(i > 1) {
+  if(isPrime(i)) {
+    para.textContent += i + ', ';
+  }
+  i--;
+}
+para.textContent = para.textContent.slice(0, -2) + '.';
+    /*para.textContent.slice(0, -2) is a string method that returns a new string that consists of the characters from the original string 
+    from index 0 up to, but not including, the second last character. This is used to remove the final comma and space in the paragraph text.
+
+The + '.' part adds a period to the end of the new string, effectively replacing the removed comma and space with a period.
+
+Finally, the entire new string is assigned back to para.textContent using the = assignment operator. This sets the text content of the paragraph
+ element to the new string with the final period*/
+
+    // Don't edit the code below here!
+    const section = document.querySelector('section');
+    section.appendChild(para);
+  </script>
+
+</html>
